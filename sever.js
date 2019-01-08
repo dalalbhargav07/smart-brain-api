@@ -21,40 +21,12 @@ const db = knex({
 
 const app = express();
 
-const database = {
-	users: [
-		{
-			id:'123',
-			name: 'john',
-			email: 'j@gmail.com',
-			password: 'test',
-			entries: 0,
-			joined: new Date()
-		},
-		{
-			id:'456',
-			name: 'shail',
-			email: 's@gmail.com',
-			password: 'shail',
-			entries: 0,
-			joined: new Date()
-		}
-	],
-	login: [
-		{
-			id:'987',
-			hash:'',
-			email:'j@gmail.com'
-		}
-	]
-}
-
 app.use(bodyParser.json());
 
 app.use(cors());
 
 app.get('/', (req, res) => {
-	res.send(database.users)
+	res.send('It is working!')
 })
 
 app.post('/signin', (req, res) => {
